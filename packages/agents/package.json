@@ -1,0 +1,26 @@
+{
+  "name": "@procurement/agents",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "lint": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^4.0.51",
+    "@procurement/application": "workspace:*",
+    "@procurement/contracts": "workspace:*",
+    "@procurement/domain": "workspace:*",
+    "ai": "^7.0.84",
+    "openai": "^7.8.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

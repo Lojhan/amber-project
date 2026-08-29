@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1787927304366,
+      "tag": "0000_spotty_wildside",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1788033488669,
+      "tag": "0001_public_dark_beast",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1788037394472,
+      "tag": "0002_free_red_hulk",
+      "breakpoints": true
+    }
+  ]
+}

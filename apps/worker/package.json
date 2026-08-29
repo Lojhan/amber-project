@@ -1,0 +1,19 @@
+{
+  "name": "@procurement/worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "dev": "tsx src/main.ts"
+  },
+  "dependencies": {
+    "@procurement/bootstrap": "workspace:*",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.5",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}

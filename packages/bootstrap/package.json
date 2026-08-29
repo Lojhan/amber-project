@@ -1,0 +1,28 @@
+{
+  "name": "@procurement/bootstrap",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./api": "./src/api.ts",
+    "./worker": "./src/worker.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@procurement/application": "workspace:*",
+    "@procurement/agents": "workspace:*",
+    "@procurement/db": "workspace:*",
+    "@procurement/domain": "workspace:*",
+    "@procurement/persistence": "workspace:*",
+    "@procurement/parser": "workspace:*",
+    "@procurement/storage": "workspace:*",
+    "openai": "^7.8.0",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

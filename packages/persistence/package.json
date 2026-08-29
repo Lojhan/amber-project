@@ -1,0 +1,30 @@
+{
+  "name": "@procurement/persistence",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./drizzle-unit-of-work": "./src/drizzle-unit-of-work.ts",
+    "./pg-boss-bridge": "./src/pg-boss-bridge.ts",
+    "./repositories": "./src/repositories/index.ts",
+    "./read-models": "./src/read-models/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "test:postgres": "vitest run src/repositories/repositories.postgres.test.ts",
+    "seed:catalog": "tsx src/catalog-seed-cli.ts"
+  },
+  "dependencies": {
+    "@procurement/application": "workspace:*",
+    "@procurement/domain": "workspace:*",
+    "@procurement/db": "workspace:*",
+    "drizzle-orm": "^0.45.2",
+    "pg-boss": "12.28.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "procurement-negotiation-system",
+  "private": true,
+  "packageManager": "pnpm@10.12.4",
+  "pnpm": {
+    "overrides": {
+      "exceljs>uuid": "11.1.1"
+    }
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm --workspace-concurrency=1 -r test",
+    "lint": "biome check . && node scripts/check-architecture.mjs",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "pnpm --filter @procurement/db exec tsx src/migrate-cli.ts",
+    "openapi:document": "tsx scripts/generate-openapi.ts",
+    "openapi:generate": "pnpm openapi:document && openapi-typescript packages/contracts/openapi.json -o apps/web/src/lib/api/generated.ts",
+    "openapi:check": "node scripts/check-contract-artifacts.mjs",
+    "e2e": "playwright test",
+    "e2e:install": "playwright install chromium",
+    "compose:up:podman": "sh scripts/podman-compose-up.sh",
+    "compose:down:podman": "podman-compose --in-pod false -f docker-compose.yml down"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.10",
+    "@axe-core/playwright": "^4.10.2",
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.0.0",
+    "drizzle-kit": "^0.31.4",
+    "openapi-typescript": "^7.13.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}

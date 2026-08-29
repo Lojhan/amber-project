@@ -1,0 +1,74 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.10/schema.json",
+  "vcs": {
+    "enabled": false,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "includes": [
+      "**",
+      "!apps/web/src/lib/api/generated.ts",
+      "!coding-challenge",
+      "!**/.pnpm-store",
+      "!**/dist",
+      "!**/coverage",
+      "!test-results",
+      "!playwright-report",
+      "!**/*.gen.ts",
+      "!**/routeTree.gen.ts",
+      "!quotation_*.xlsx",
+      "!products.csv"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf"
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "recommended",
+      "suspicious": {
+        "noExplicitAny": "error"
+      },
+      "complexity": {
+        "noExcessiveCognitiveComplexity": "warn",
+        "noExcessiveLinesPerFunction": {
+          "level": "error",
+          "options": { "maxLines": 80, "skipBlankLines": true }
+        }
+      },
+      "style": {
+        "noNonNullAssertion": "off",
+        "noExcessiveLinesPerFile": {
+          "level": "error",
+          "options": { "maxLines": 300, "skipBlankLines": true }
+        }
+      }
+    }
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double",
+      "semicolons": "always",
+      "trailingCommas": "all"
+    }
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
+  "json": { "formatter": { "enabled": true } }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "@procurement/db",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/client.ts",
+    "./client": "./src/client.ts",
+    "./schema": "./src/schema/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.45.2",
+    "pg": "8.23.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.15.5",
+    "tsx": "^4.20.3"
+  }
+}

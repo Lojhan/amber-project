@@ -1,0 +1,14 @@
+node_modules/
+.pnpm-store/
+dist/
+coverage/
+.turbo/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+.codeql/
+test-results/
+playwright-report/
+recordings/source/
